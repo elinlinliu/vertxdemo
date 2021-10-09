@@ -19,12 +19,22 @@ class DBUtil {
 
         val client: MySQLPool
 
+        var host:String = "localhost";
+
+        var port:Integer = 3306;
+
+        var database:String = "database";
+
+        var user:String = "user";
+
+        var password:String = "password";
+
         init {
             val connectOptions: MySQLConnectOptions =
-                MySQLConnectOptions().setHost("172.38.40.182").setPort(3306).setDatabase("dl_platform_old").setUser("root").setPassword("oc@2020")
+                MySQLConnectOptions().setHost(host).setPort(port).setDatabase(database).setUser(user).setPassword(password)
             val poolOptions: PoolOptions = PoolOptions().setMaxSize(6)
             client = MySQLPool.pool(connectOptions, poolOptions)
-            println("init mysql client: host:%s,port:%d,database:%s".format("172.38.40.182", 3306, "dl_platform_old"))
+            println("init mysql client: host:%s,port:%d,database:%s".format(host, port, database))
 //            Runtime.getRuntime().addShutdownHook(Thread { client.close() })
         }
 
