@@ -21,7 +21,7 @@ class DBUtil {
 
         var host:String = "localhost";
 
-        var port:Integer = 3306;
+        var port: Int = 3306;
 
         var database:String = "database";
 
